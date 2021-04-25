@@ -1,4 +1,7 @@
-def hangman(word):
+import random
+
+def hangman(word_list):
+  word = word_list[random.randint(0, len(word_list) - 1)]
   wrong = 0
   stages = ["",
             "_____     ",
@@ -35,4 +38,4 @@ def hangman(word):
     print("\n".join(stages[0:wrong+1]))
     print("あなたの負け！正解は {}".format(word))
 
-hangman("book")
+hangman(["book", "cat", "dog"])
